@@ -1,7 +1,8 @@
 const { Address } = require("../../mongodb/schemas/schemas");
 
 const setAddress = async (req, res) => {
-  const userId = req.params.user_id;
+    let _user_id = req.params.user_id;
+
 
   const address = new Address({
     streetAddress: req.body.streetAddress,
@@ -10,12 +11,13 @@ const setAddress = async (req, res) => {
     pincode: req.body.pincode,
     phoneNo: req.body.phoneNo,
     apartment: req.body.apartment,
-    user_id: userId,
+    user_id: _user_id,
   });
 
   try {
-    const result = await Address.updateOne(
-      { user_id: userId },
+    const result = await address.save(
+      { user_id: _user_id },
+      { $set: address.toObject() },
       { upsert: true }
     );
 

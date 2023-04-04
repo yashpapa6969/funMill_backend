@@ -10,7 +10,7 @@ const LoginUser = async (req,res) => {
             res.status(200).json({
                 "status": "success",
                 "message": "successfully authenticated",
-                "student_id": user.user_id
+                "user_id": user.user_id
             });
         } else {
             res.status(400).json({

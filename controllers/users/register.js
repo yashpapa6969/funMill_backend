@@ -1,7 +1,7 @@
 const schemas = require("../../mongodb/schemas/schemas");
 
 const NewUser = async (req, res) => {
-  const { fname, lname,emailAddress, password, cpassword,user_id } = req.body;
+  const { fname, lname,emailAddress, password,user_id } = req.body;
 
   try {
     const user1 = await schemas.User.findOne({ email: emailAddress });
@@ -13,7 +13,7 @@ const NewUser = async (req, res) => {
         lname,
         emailAddress,
         password,
-        cpassword,
+        
         user_id,
       });
       await user.save();

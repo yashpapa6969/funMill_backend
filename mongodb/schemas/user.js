@@ -10,8 +10,6 @@ const _User = new Schema({
     lname: {type :String, unique : false, required : true},
     emailAddress: {type :String, unique : true, required : true},
     password: {type :String, unique : false, required : true,},
-    cpassword: {type :String, unique : false, required : true,},
-
     user_id: {type: String, default: ()=> uuidv4()},
     
   });
