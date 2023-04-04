@@ -1,7 +1,9 @@
 const User = require("./user");
 const Address = require("./address");
 const Type = require('./product_type');
-const Category = require('./category')
+const Category = require('./category');
+const Customer = require('./customer')
+
 
 
 
@@ -11,6 +13,7 @@ var Schemas = {
   Address: Address,
   Type:Type,
   Category:Category,
+  Customer:Customer,
 
 };
 

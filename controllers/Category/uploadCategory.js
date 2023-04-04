@@ -11,7 +11,7 @@ const setCategory = async (req, res) => {
     const result = await category.save();
 
     console.log(result);
-    res.status(200).json({ message: "Successfully set address!" });
+    res.status(200).json({ message: "Successfully set category!" });
   } catch (error) {
     console.error(error);
     res.status(400).json({ message: error.message });
